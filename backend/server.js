@@ -1,13 +1,21 @@
 import express from 'express'
 import products from './data/products.js'
 import dotenv from 'dotenv'
+import morgan from 'morgan'
 dotenv.config()
+import db from './config/db.js'
+db();
+
 
 const port = process.env.PORT || 8000
 
 const node_env = process.env.NODE_ENV
 
 const app = express()
+
+app.use(express.json())
+
+app.use(morgan('dev'))
 
 
 app.get('/api/products',(req,res)=>{

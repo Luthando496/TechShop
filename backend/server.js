@@ -1,7 +1,9 @@
 import express from 'express'
-import products from './data/products.js'
 import dotenv from 'dotenv'
 import morgan from 'morgan'
+import productRoutes from './Routes/ProductRoutes.js'
+import {notFound,errorHandler} from './middleware/errorMiddleware.js'
+
 dotenv.config()
 import db from './config/db.js'
 db();
@@ -18,23 +20,13 @@ app.use(express.json())
 app.use(morgan('dev'))
 
 
-app.get('/api/products',(req,res)=>{
 
-    res.json(products)
-})
+app.use('/api/products', productRoutes)
 
 
-app.get('/api/products/:id',(req,res)=>{
+app.use(notFound)
+app.use(errorHandler)
 
-    const id = Number(req.params.id)
-
-    console.log(id)
-
-    const product = products.find(p=>p._id === id)
-
-
-    res.json(product)
-})
 
 
 app.listen(port,()=>console.log(`server runnning on  ${port}  ${node_env} ` ))

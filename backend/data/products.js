@@ -9,7 +9,6 @@ const products = [
       price: 89.99,
       countInStock: 10,
       rating: 4.5,
-      _id:1,
       numReviews: 12,
     },
     {
@@ -22,7 +21,6 @@ const products = [
       price: 599.99,
       countInStock: 7,
       rating: 4.0,
-      _id:2,
       numReviews: 8,
     },
     {
@@ -36,7 +34,6 @@ const products = [
       countInStock: 5,
       rating: 3,
  
- _id:3,     numReviews: 12,
     },
     {
       name: 'Sony Playstation 5',
@@ -48,7 +45,6 @@ const products = [
       price: 399.99,
       countInStock: 11,
       rating: 5,
-      _id:4,
       numReviews: 12,
     },
     {
@@ -61,7 +57,6 @@ const products = [
       price: 49.99,
       countInStock: 7,
       rating: 3.5,
-      _id:5,
       numReviews: 10,
     },
     {
@@ -74,7 +69,6 @@ const products = [
       price: 29.99,
       countInStock: 0,
       rating: 4,
-      _id:6,
       numReviews: 12,
     },
   ];
